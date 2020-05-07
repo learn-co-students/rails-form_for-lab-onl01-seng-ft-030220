@@ -1,5 +1,5 @@
 class SchoolClassesController < ApplicationController
-  before_action :set_school_class, only: [:show, :edit, :update]
+  before_action :set_school_class, only: [:show, :edit, :update, :destroy]
 
   def index
     @school_classes = SchoolClass.all
@@ -32,6 +32,11 @@ class SchoolClassesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @school_class.destroy
+    redirect_to school_classes_path
   end
 
   private

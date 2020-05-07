@@ -2,3 +2,4 @@
 <h3>Room Number: <%= @school_class.room_number %></h3>
 
 <%= link_to("Go Back", school_classes_path) %>
+<%= link_to('Delete Class', school_class_path(@school_class), method: :delete) %>
